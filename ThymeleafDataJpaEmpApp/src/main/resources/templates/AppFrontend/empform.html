@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Employee Form</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="container" style="width: 400px;">
+
+<form action="#" th:action="@{/App/newEmp}"
+th:object="${EMPLOYEE}"
+method="POST">
+
+<p style="font-weight:bold ;" th:if="*{empno} == null">Add Employee Details</p> 
+ <p style="font-weight:bold ;" th:if="*{empno} != null">Update Employee Details</p> 
+
+<hr>
+
+<!-- Add hidden form field to handle update -->
+<input type="hidden" th:field="*{empno}" />
+
+<input type="text" th:field="*{ename}"
+class="form-control mb-4 col-4"
+placeholder="Employee Name">
+
+<input type="text" th:field="*{job}"
+class="form-control mb-4 col-4"
+placeholder="JOB">
+
+<input type="date" th:field="*{hireDate}"
+class="form-control mb-4 col-4"
+placeholder="Hire Date">
+
+<input type="number" th:field="*{managerId}"
+class="form-control mb-4 col-4"
+placeholder="Manager ID">
+
+<input type="number" th:field="*{salary}"
+class="form-control mb-4 col-4"
+placeholder="Salary">
+
+<input type="number" th:field="*{commission}"
+class="form-control mb-4 col-4"
+placeholder="Commission">
+
+<select class="form-select mb-4 col-4" aria-label="Default select example" th:field="*{deptNo}">
+  <option selected value="0">Department</option>
+  <option value="501">IT</option>
+  <option value="502">HR</option>
+  <option value="503">OPERATION</option>
+</select>
+<button type="submit" class="btn btn-info col2">Save</button>
+<button type="reset" class="btn btn-info col2">Reset</button> 
+<a th:href="@{/App/employees}"  class="btn btn-info col2" >Back to Employees List</a>
+</form>
+</body>
+</html>
+
+
+

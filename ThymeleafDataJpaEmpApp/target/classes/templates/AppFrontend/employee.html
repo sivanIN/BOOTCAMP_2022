@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+
+<title>EMployee Table</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width initial-scale = 1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<a th:href="@{/App/showFormForAdd}" class ="btn btn-secondary btn-sm mb-3" style="margin-top: 50px; margin-left:140px"> New
+Employee</a>
+
+<table class="table table-striped table-hover table-bordered" style="width:1000px; margin-left:140px; margin-top:1px;">
+
+
+
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">Employee ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Job</th>
+      <th scope="col">Hire Date</th>
+      <th scope="col">Manager ID</th>
+      <th scope="col">Salary</th>
+      <th scope="col">Comission</th>
+      <th scope="col">Department No</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+<tr th:each = "emp: ${EMPLOYEE}">
+  <td th:text = "${emp.empno}"></td>
+  <td th:text = "${emp.ename}"></td>
+  <td th:text = "${emp.job}"></td>
+  <td th:text = "${emp.hireDate}"></td>
+  <td th:text = "${emp.managerId}"></td>
+  <td th:text = "${emp.salary}"></td>
+  <td th:text = "${emp.commission}"></td>
+  <td th:text = "${emp.deptNo}"></td>
+  
+ <td>
+  
+  
+<a th:href="@{/App/showFormForUpdate(empid=${emp.empno})}" class="btn btn-info btn-sm"> Update </a>
+<a th:href="@{/App/delete(empid=${emp.empno})}" class="btn btn-danger btn-sm" onclick="if (!(confirm('Are you sure you want to delete this employee?'))) return false">
+Delete
+</a>
+  
+  </td>
+  
+</tr>
+
+</tbody>
+
+
+</table>
+
+</body>
