@@ -1,0 +1,83 @@
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="margin-left: 50px;">Lulu Fashion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+       
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+ -->
+
+<!-- 
+<table class="table table-striped table-bordered border-dark table-hover" style="width: 900px; margin-left:200px; margin-top: 20px; border: 1px solid black;">
+
+    <tr style="background-color: black; color: aliceblue;">
+        <th   scope="col">ID</th>
+        <th  scope="col">Name</th>
+        <th  scope="col">Description</th>
+        <th  scope="col">Unit Price</th>
+        <th  scope="col">quantity</th>
+        <th  scope="col">Image</th>
+        <th  scope="col">Product ID</th>
+        <th scope="col">Action</th>
+       
+        
+    </tr>
+
+   
+
+
+    <tr *ngFor ="let cart of carts">
+        <td>{{cart.id}}</td>
+        <td>{{cart.name}}</td>
+        <td>{{cart.description}}</td>
+        <td>{{cart.unitprice | currency:'INR'}}</td>
+        <td>{{cart.quantity}}</td>
+        <td><img [src]="cart.imageurl" style="width: 300px; height: 200px;" alt=""></td>
+        <td>{{cart.productid}}</td>
+        <td>
+            <button type="submit" class="btn btn-info" (click)="deleteprod(cart.id)">Delete</button><td>
+        </td>
+      
+       
+    </tr>
+
+</table> -->
+
+
+<!--<div class="card text-center" style="width: 900px; margin-left:200px ;">
+    <div class="card-header">
+       <b> Shoping Cart </b> 
+    </div>
+    <div class="card-body">
+        <div class="card mb-3" style="max-width: 800px;" *ngFor ="let cart of carts">
+            <div class="row g-0" >
+              <div class="col-md-4" >
+                <img [src]="cart.imageurl" class="img-fluid rounded-start" alt="..." style="height: 200px;">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{cart.name}}</h5>
+                  <p class="card-text">{{cart.description}}</p>
+                  <p class="card-text" style="color: brown;">{{cart.unitprice | currency:'INR'}}</p>
+                  <p class="card-text" >Quantity: {{cart.quantity}}</p>
+                  <button type="submit" class="btn btn-info" (click)="deleteprod(cart.id)">Delete</button><td></td>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="card-footer text-muted" style="font-weight: bold;">
+        Subtotal ({{items}} items):   {{Price|currency:'INR'}}
+    </div>
+  </div> -->

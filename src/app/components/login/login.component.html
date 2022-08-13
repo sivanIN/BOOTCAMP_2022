@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Lulu Fashion</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/newcategory">Add product Category</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit2(loginForm.value)" novalidate>
+    Enter email<input type="text" class="form-control" name="email" ngModel #email=ngModel required minlength="2" maxlength="30"><br/>
+    Enter password<input class="form-control" type="password" name="password" ngModel #password=ngModel required minlength="2" maxlength="30"><br/>
+    <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+    </form>
+    
+    <!-- <div>
+    <div *ngIf="email.errors?.required && email.touched">Please enter the emial id</div>
+    <div *ngIf="password.errors?.required && email.touched">Please enter the password</div>
+    <div *ngIf="email.errors?.minlength && email.touched">Please enter 2 characters minimum </div>
+    <div *ngIf="password.errors?.minlength && email.touched">Please enter 2 characters minimum </div> -->
+    
