@@ -1,0 +1,9 @@
+table, th, td {
+    border: 1px solid;
+  }
+
+  app-department{
+    width: 200px; 
+    margin-left: 900px; 
+    position: absolute
+  } 

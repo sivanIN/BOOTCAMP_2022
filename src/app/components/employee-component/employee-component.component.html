@@ -1,0 +1,68 @@
+<h3 style="text-align: center;">Employee Table</h3>
+
+<!-- <app-department ></app-department> -->
+
+
+
+
+<div class="container" >
+    <form #se="ngForm" (ngSubmit)="getEmployeeByName()">
+    <div class="row">
+        
+      <div class="col">
+        <input type="email" placeholder="Filter by name" class="form-control" style="width: 300px; margin-left: 600px;" name="searchName" [(ngModel)]="searchName" aria-describedby="emailHelp">
+      </div>
+      <div class="col">
+        <button type="submit" class="btn btn-primary" value="search">Submit</button>
+      </div>   
+    </div>
+</form>
+</div>
+
+
+  
+
+
+  <div class="dropdown" style="margin-left: 680px; ">
+    <button class="btn  btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Filter By department
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li *ngFor ="let dep of departments"  ><a class="dropdown-item" routerLink="/employees/{{dep.deptNo}}" >{{dep.depName}}</a></li>
+      
+    </ul>
+  </div>
+
+
+<button (click)="newEmployee()" style="margin-left: 205px;">Employee add</button>
+
+
+<table class="table table-striped table-bordered border-dark table-hover" style="width: 900px; margin-left:200px; margin-top: 20px; border: 1px solid black;">
+
+    <tr style="background-color: black; color: aliceblue;">
+        <th   scope="col">Employee No</th>
+        <th  scope="col">Employee Name</th>
+        <th  scope="col">Job</th>
+        <th  scope="col">Hire Date</th>
+        <th  scope="col">Manager ID</th>
+        <th  scope="col">Salary</th>
+        <th  scope="col">Commission</th>
+        <th  scope="col">Department No</th>
+        <th  scope="col">Action</th>
+        
+    </tr>
+
+    <tr *ngFor ="let emp of employees" >
+        <td>{{emp.empno}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.job}}</td>
+        <td>{{emp.hireDate}}</td>
+        <td>{{emp.managerId}}</td>
+        <td>{{emp.salary | currency:'INR' }} </td>
+        <td>{{emp.commission}}</td>
+        <td>{{emp.deptNo}}</td>
+        <button type="submit" class="btn btn-info" (click)="upadetEmp(emp.empno)">Update</button>
+        <button type="submit" class="btn btn-info" (click)="deleteEmp(emp.empno)">Delete</button>
+    </tr>
+
+</table>

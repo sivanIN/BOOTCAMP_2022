@@ -1,0 +1,73 @@
+
+<h3 style="text-align: center;">New Employee</h3>
+
+<form  #ef="ngForm" style=" margin-left:500px; margin-top: 10px;" (ngSubmit)="newEmployee()">
+
+  
+        <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Employee Name</label>
+        <div class="col-sm-10">
+            <input type="text" name="ename" [(ngModel)]="employees.ename">
+    
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Job</label>
+        <div class="col-sm-10">
+            <input type="text" name="job" [(ngModel)]="employees.job">
+    
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Hire Date</label>
+        <div class="col-sm-10">
+            <input type="Date" name="hireDate" [(ngModel)]="employees.hireDate" >
+    
+        </div>
+    </div>
+    
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Manager ID</label>
+           <div class="col-sm-10">
+            <input type="number" name="managerId" [(ngModel)]="employees.managerId">
+           </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Salary</label>
+           <div class="col-sm-10">
+            <input type="number" name="salary"  [(ngModel)]="employees.salary">
+           </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Comission</label>
+           <div class="col-sm-10">
+            <input type="number" name="commission" [(ngModel)]="employees.commission">
+           </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Department No</label>
+           <div class="col-sm-10">
+            <select  class="form-select" name="deptNo" aria-label="Default select example" style="width: 200px;" [(ngModel)]="employees.deptNo" >
+                <option   selected >Filter By  Department</option>
+                <option   *ngFor ="let dep of departments"  value={{dep.deptNo}}>{{dep.depName}}</option>   
+             </select>
+            <!-- <app-department name="deptNo" [(ngModel)]="employees.deptNo" ></app-department> -->
+           </div>
+    </div>
+
+    
+
+  
+    
+    <div class="form-group row">
+      <div class="col-sm-2"><button type="submit">Save</button></div>
+      <div class="col-sm-2"><button type="reset">Reset</button></div>
+    </div>
+
+    <a routerLink="/">Home</a>
+    
+    </form>
+
+
+
+    

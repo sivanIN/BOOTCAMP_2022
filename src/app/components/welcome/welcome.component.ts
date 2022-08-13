@@ -11,10 +11,16 @@ export class WelcomeComponent implements OnInit {
   constructor(private route:Router) { }
 
   ngOnInit(): void {
-    
   }
 
+  EmployeeDetails(){
 
-  
+    this.route.navigateByUrl("/employee")
+
+  }
+
+  newDepartment(){
+    this.route.navigateByUrl("/newDepartment")
+  }
 
 }
